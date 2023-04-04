@@ -1,35 +1,34 @@
-Python 3.10.10 (tags/v3.10.10:aad5f6a, Feb  7 2023, 17:20:36) [MSC v.1929 64 bit (AMD64)] on win32
-Type "help", "copyright", "credits" or "license()" for more information.
->>> class BinaryTree:
-...     def __init__(self, key=None):
-...         self.key = key
-...         self.left = None
-...         self.right = None
-...  
-...     def set_root(self, key):
-...         self.key = key
-...  
-...     def inorder(self):
-...         if self.left is not None:
-...             self.left.inorder()
-...         print(self.key, end=' ')
-...         if self.right is not None:
-...             self.right.inorder()
-...  
-...     def insert_left(self, new_node):
-...         self.left = new_node
-...  
-...     def insert_right(self, new_node):
-...         self.right = new_node
-...  
-...     def search(self, key):
-...         if self.key == key:
-...             return self
-...         if self.left is not None:
-...             temp =  self.left.search(key)
-...             if temp is not None:
-...                 return temp
-        if self.right is not None:
+
+class BinaryTree:
+     def __init__(self, key=None):
+         self.key = key
+         self.left = None
+         self.right = None
+  
+     def set_root(self, key):
+         self.key = key
+  
+     def inorder(self):
+         if self.left is not None:
+             self.left.inorder()
+         print(self.key, end=' ')
+         if self.right is not None:
+             self.right.inorder()
+  
+     def insert_left(self, new_node):
+         self.left = new_node
+  
+     def insert_right(self, new_node):
+         self.right = new_node
+  
+     def search(self, key):
+         if self.key == key:
+             return self
+         if self.left is not None:
+             temp =  self.left.search(key)
+             if temp is not None:
+                 return temp
+         if self.right is not None:
             temp =  self.right.search(key)
             return temp
         return None
@@ -83,3 +82,4 @@ while True:
         print('Number of nodes in tree: {}'.format(count_nodes(btree)))
  
     elif operation == 'quit':
+        break        
